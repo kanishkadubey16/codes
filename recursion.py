@@ -5,8 +5,26 @@ class Solution:
         return n==1
 # Testing the function
 solution = Solution()
-print(solution.isPowerOfTwo(8))   # True
-print(solution.isPowerOfTwo(10))  # False
-print(solution.isPowerOfTwo(1))   # True
-print(solution.isPowerOfTwo(16))  # True
-print(solution.isPowerOfTwo(0))   # False
+print(solution.isPowerOfTwo(8))   
+print(solution.isPowerOfTwo(10))  
+print(solution.isPowerOfTwo(1))   
+print(solution.isPowerOfTwo(16))  
+print(solution.isPowerOfTwo(0))   
+
+
+
+# new code -cimbing stairs
+MOD = 10**9 + 7
+
+def climbStairs(n):
+    if n == 0:
+        return 1
+    if n == 1:
+        return 1
+    a, b = 1, 1  
+    for i in range(2, n + 1):
+        a, b = b, (a + b) % MOD
+    
+    return b
+n = int(input())
+print(climbStairs(n))
