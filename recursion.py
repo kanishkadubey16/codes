@@ -28,3 +28,22 @@ def climbStairs(n):
     return b
 n = int(input())
 print(climbStairs(n))
+
+
+# new code 
+def can_jump(nums):
+    max_reachable = 0
+    n = len(nums)
+    
+    for i in range(n):
+        if i > max_reachable:
+            print("false")
+            return
+        max_reachable = max(max_reachable, i + nums[i])
+    
+    print("true")
+
+
+n = int(input().strip())  
+nums = list(map(int, input().split()))
+can_jump(nums)
