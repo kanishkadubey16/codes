@@ -36,3 +36,23 @@ def deleteAtTail(head):
     # make second last node next to none
     prev.next = None
     return head
+
+
+
+
+
+'''
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.next = None
+
+'''
+def make_circular(head):
+    # take cur to last_node
+    cur = head
+    while cur.next != None:
+        cur = cur.next 
+    # make last node next ppoint to head
+    cur.next = head
+    return head
