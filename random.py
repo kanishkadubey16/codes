@@ -8,3 +8,25 @@ def even_odd_diff(arr):
             b += arr[i]
 
     return a - b
+
+
+'''
+class Node:
+    def __init__(self, x):
+        self.data = x
+        self.next = None
+'''
+def isPositive(head):
+    negative_count = 0
+    current = head
+
+    while current:
+        if current.data < 0:
+            negative_count += 1
+        current = current.next
+
+    # Check if the count of negative numbers is even
+    if negative_count % 2 == 0:
+        return "Yes"
+    else:
+        return "No"
