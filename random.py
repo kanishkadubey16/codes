@@ -55,4 +55,46 @@ def common(chars1, chars2):
                 if not common(chars[i], chars[j]):
                     ans = max(ans, len(words[i]) * len(words[j]))
         return ans
+
+
+
+# search pattern 
+class Solution:
+    def constructLps(self, pat, lps):
+        l = 0
+        m = len(pat)
+        lps[0] = 0
+        i = 1
+        while i < m:
+            if pat[i] == pat[l]:
+                l+=1
+                lps[i] = l 
+                i+=1
+            else:
+                if l != 0:
+                    l = lps[l-1]
+                else:
+                    lps[i] = 0
+                    i+=1
+    def search(self, pat, txt):
+        n = len(txt)
+        m = len(pat)
+        lps = [0] * m
+        result = []
+        self.constructLps(pat,lps)
+        i = 0
+        j = 0
+        while i < n:
+            if txt[i] == pat[j]:
+                i+=1
+                j+=1
+                if j == m:
+                    result.append(i-j)
+                    j = lps[j-1]
+            else:
+                if j != 0:
+                    j = lps[j-1]
+                else:
+                    i+=1
+        return result
                 
