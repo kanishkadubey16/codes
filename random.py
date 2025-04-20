@@ -125,4 +125,17 @@ def areRotations(self,s1,s2):
     if len(s1) != len(s2):
         return False
     return s2 in (s1 + s1)
+
+
+class Solution:
+    def sort012(self, arr):
+        # Count 0s, 1s, and 2s
+        c0 = arr.count(0)
+        c1 = arr.count(1)
+        c2 = arr.count(2)
+
+        # Overwrite the array directly using slicing
+        arr[:c0] = [0] * c0
+        arr[c0:c0 + c1] = [1] * c1
+        arr[c0 + c1:] = [2] * c2
             
