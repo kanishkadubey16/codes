@@ -222,4 +222,10 @@ sorted_nums = sorted(nums)
 
 
 
+c = Counter(s)
+        return len(set(c.values())) == 1
+
+
+
+
 
