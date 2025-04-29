@@ -248,5 +248,15 @@ def isPositive(head):
 
 
 
+def even_sum(arr):
+    e = 0
+    for i in range(len(arr)):
+        if i % 2 == 0:  
+            e += arr[i] 
+    return e
+
+
+
+
 
 
