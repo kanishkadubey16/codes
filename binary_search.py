@@ -21,3 +21,22 @@ while  l <= r:
         countP  = len(nums) - mid
         r = mid-1
 print(max(countN,countP))
+
+
+
+
+class Solution:   
+    def peakElement(self,arr):
+        l = 0
+        h = len(arr)-1 
+        while l <= h:
+            mid = (h+l)//2 
+            left = arr[mid-1] if mid > 0 else float ("-inf")
+            right = arr[mid+1]if mid < len(arr) - 1 else float("-inf")
+            if arr[mid] > left and arr[mid] > right:
+                return mid 
+            elif arr[mid] < right:
+                l = mid + 1
+            else:
+                h = mid - 1
+        return -1
