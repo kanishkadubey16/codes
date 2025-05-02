@@ -256,6 +256,33 @@ def even_sum(arr):
     return e
 
 
+class Solution:
+
+    def aggressiveCows(self, stalls, k):
+        stalls.sort()
+        def canplace(d):
+            cows,last = 1,stalls[0]
+            for pos in stalls[1:]:
+                if pos-last >= d:
+                    cows += 1 
+                    last = pos 
+                    if cows == k:
+                        return True
+            return False 
+        l,h = 1,stalls[-1]-stalls[0]
+        res = 0
+        while l <= h:
+            mid = (l+h)//2 
+            if canplace(mid):
+                res = mid 
+                l = mid+1 
+            else:
+                h = mid-1
+        return res
+
+
+
+
 
 
 
