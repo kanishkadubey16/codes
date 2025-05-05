@@ -289,6 +289,27 @@ def odd_sum(arr):
             odd += arr[i]
     return odd
 
+def maxSubArray(nums):
+    # Initialize both res and current sum (ans) to the first element
+    res = nums[0]
+    ans = nums[0]
+
+    # Start from the second element and go through the list
+    for i in range(1, len(nums)):
+        # Either start a new subarray from current element or extend the previous subarray
+        ans = max(nums[i], ans + nums[i])
+        # Update the maximum sum found so far
+        res = max(res, ans)
+
+    return res
+
+# Input handling
+N = int(input())  # Size of the array
+arr = list(map(int, input().split()))  # Array elements
+
+# Call the function and print the result
+print(maxSubArray(arr))
+
 
 
 
