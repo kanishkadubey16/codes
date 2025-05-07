@@ -312,6 +312,34 @@ print(maxSubArray(arr))
 
 
 
+'''
+class Node:
+    def __init__(self, val=0):
+        self.val = val
+        self.left = None
+        self.right = None
+'''
+
+def swap_values(root, num1, num2):
+    node1 = None
+    node2 = None
+    def dfs(node):
+        nonlocal node1, node2  
+        if not node:
+            return
+        if node.val == num1:
+            node1 = node
+        if node.val == num2:
+            node2 = node
+        dfs(node.left)
+        dfs(node.right)
+    dfs(root)
+    if node1 and node2:
+        node1.val, node2.val = node2.val, node1.val
+
+    return root
+
+
 
 
 
