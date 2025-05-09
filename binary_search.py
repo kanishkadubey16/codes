@@ -48,3 +48,20 @@ if root is None:
         self.invertTree(root.left)
         self.invertTree(root.right)
         return root
+
+
+def max_spread(root):
+    if not root:
+        return 0
+    q = [(root,0)]
+    ans = 0
+    while q:
+        ans = max(ans,q[-1][1] - q[0][1] + 1)
+        temp = []
+        for node, i in q:
+            if node.left:
+                temp.append((node.left,2*i))
+            if node.right:
+                temp.append((node.right,2*i + 1))
+        q = temp 
+    return ans
