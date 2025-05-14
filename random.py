@@ -362,6 +362,35 @@ class Solution:
         return False
 
 
+class Solution:
+    def findTriplets(self, arr):
+        size = len(arr)
+        triplets = []
+
+        # Step 1: Map each value to all its positions (indexes)
+        value_to_indexes = {}
+        for pos in range(size):
+            value = arr[pos]
+            if value not in value_to_indexes:
+                value_to_indexes[value] = []
+            value_to_indexes[value].append(pos)
+
+        # Step 2: Try every pair of elements (first and second)
+        for first in range(size - 2):
+            for second in range(first + 1, size - 1):
+                # Calculate the third value needed to make the sum 0
+                third_value = -(arr[first] + arr[second])
+
+                # Check if this third_value exists in the array
+                if third_value in value_to_indexes:
+                    for third in value_to_indexes[third_value]:
+                        # Make sure index order is correct: first < second < third
+                        if third > second:
+                            triplets.append([first, second, third])
+
+        return triplets
+
+
 
 
 
