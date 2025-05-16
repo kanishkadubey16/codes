@@ -433,6 +433,17 @@ while top <= bottom and left <= right:
 print(*result)
 
 
+class Solution:    
+    #Function to return the count of number of elements in union of two arrays.
+    def findUnion(self, a, b):
+        d = set()
+        for i in a:
+            d.add(i)
+        for i in b:
+            d.add(i)
+        return len(d)
+
+
 
 
 
