@@ -444,6 +444,20 @@ class Solution:
         return len(d)
 
 
+def longestConsecutive(self,arr):
+        num = set(arr)
+        longest = 0
+        for i in arr:
+            if i-1 not in num:
+                current = i
+                c= 1
+                while current + 1 in num:
+                    current += 1
+                    c += 1
+                longest = max(longest,c)
+        return longest
+
+
 
 
 
