@@ -467,6 +467,21 @@ class Solution:
             anagram_map[key].append(word)
         return list(anagram_map.values())
 
+class Solution:
+    def countSubarrays(self, arr, k):
+        p = {0:1}
+        curr = 0
+        c= 0
+        for i in arr:
+            curr += i
+            if (curr - k) in p:
+                c += p[curr - k]
+            if curr in p:
+                p[curr] += 1
+            else:
+                p[curr] = 1
+        return c
+
 
 
 
