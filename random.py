@@ -483,6 +483,12 @@ class Solution:
         return c
 
 
+n = input().strip()
+
+reversed_n = n[::-1]
+reversed_number = int(reversed_n) 
+print(reversed_number)
+
 
 
 
