@@ -490,6 +490,23 @@ reversed_number = int(reversed_n)
 print(reversed_number)
 
 
+class Solution:
+    #Complete the below function
+    def countPairs(self, arr, target):
+        arr.sort()
+        n = len(arr)
+        l = 0
+        r = n-1 
+        c = 0
+        while l < r:
+            if arr[l] + arr[r] < target:
+                c += (r - l)
+                l += 1 
+            else:
+                r -= 1 
+        return c
+
+
 
 
 
