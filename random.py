@@ -506,6 +506,22 @@ def countTriangles(self, arr):
         return c
 
 
+#User function Template for python3
+class Solution:
+    def subarraySum(self, arr, target):
+        n = len(arr)
+        start = 0
+        cur = 0
+        for i in range(n):
+            cur += arr[i]
+            while cur > target and start <= i:
+                cur -= arr[start]
+                start += 1
+            if cur == target:
+                return [start+1,i+1]
+        return [-1]
+
+
 
 
 
