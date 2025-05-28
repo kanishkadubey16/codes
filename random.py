@@ -56,27 +56,7 @@ class Solution:
                 else:
                     lps[i] = 0
                     i+=1
-    def search(self, pat, txt):
-        n = len(txt)
-        m = len(pat)
-        lps = [0] * m
-        result = []
-        self.constructLps(pat,lps)
-        i = 0
-        j = 0
-        while i < n:
-            if txt[i] == pat[j]:
-                i+=1
-                j+=1
-                if j == m:
-                    result.append(i-j)
-                    j = lps[j-1]
-            else:
-                if j != 0:
-                    j = lps[j-1]
-                else:
-                    i+=1
-        return result
+    
 
 
 # string questions 
