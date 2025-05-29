@@ -9,6 +9,26 @@ def even_odd_diff(arr):
 
     return a - b
 
+class Solution:
+    def maxWater(self, arr):
+        a = len(arr)
+        if a <= 2:
+            return 0 
+        b = [0] * a 
+        c = [0] * a 
+        b[0] = arr[0]
+        for d in range(1,a):
+            b[d] = max(b[d-1],arr[d])
+        c[a-1] = arr[a-1]
+        for d in range(a-2,-1,-1):
+            c[d] = max(c[d+1],arr[d])
+        e = 0 
+        for d in range(a):
+            f = min(b[d],c[d]) - arr[d]
+            if f > 0:
+                e += f 
+        return e
+
 
 
 
