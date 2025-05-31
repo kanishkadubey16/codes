@@ -10,6 +10,22 @@ def even_odd_diff(arr):
     return a - b
 
 class Solution:
+    #Function to find equilibrium point in the array.
+    def findEquilibrium(self, arr):
+        n = len(arr)
+        prefix = [0] * n
+        prefix[0] = arr[0]
+        for i in range(1,n):
+            prefix[i] = prefix[i-1] + arr[i]
+        total = prefix[-1]
+        for i in range(n):
+            l = prefix[i-1] if i > 0 else 0 
+            r = total - prefix[i]
+            if l == r:
+                return i 
+        return -1
+
+class Solution:
     def maxWater(self, arr):
         a = len(arr)
         if a <= 2:
