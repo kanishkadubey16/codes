@@ -13,21 +13,6 @@ print(solution.isPowerOfTwo(0))
 
 
 
-# new code -cimbing stairs
-MOD = 10**9 + 7
-
-def climbStairs(n):
-    if n == 0:
-        return 1
-    if n == 1:
-        return 1
-    a, b = 1, 1  
-    for i in range(2, n + 1):
-        a, b = b, (a + b) % MOD
-    
-    return b
-n = int(input())
-print(climbStairs(n))
 
 
 # new code 
