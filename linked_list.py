@@ -200,6 +200,30 @@ class Solution:
         
         return slow
 
+class Solution:
+    
+    #Function to rotate a linked list.
+    def rotate(self, head, k):
+        if not head or not head.next or k == 0:
+            return head 
+        # count length 
+        temp = head 
+        l = 1 
+        while temp.next:
+            temp = temp.next 
+            l += 1 
+        k = k % l
+        if k == 0:
+            return head 
+        # go to (k - 1)th node 
+        cur = head 
+        for _ in range(k - 1):
+            cur = cur.next 
+        new_head = cur.next 
+        cur.next = None 
+        temp.next = head 
+        return new_head
+
 
 
 def check(node,val):
