@@ -9,21 +9,7 @@ def even_odd_diff(arr):
 
     return a - b
 
-class Solution:
-    def longestSubarray(self, arr, k):  
-        prefix_sum = 0 
-        s  = {}
-        m = 0 
-        for i in range(len(arr)):
-            prefix_sum += arr[i]
-            if prefix_sum == k:
-                m = i + 1 
-            if (prefix_sum - k) in s :
-                length = i - s[prefix_sum - k]
-                m = max(m,length)
-            if prefix_sum not in s:
-                s[prefix_sum] = i
-        return m
+
 
 class Solution:
     #Function to find equilibrium point in the array.
