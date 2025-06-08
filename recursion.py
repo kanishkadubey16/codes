@@ -13,22 +13,6 @@ print(solution.isPowerOfTwo(0))
 
 
 
-
-
-# new code 
-def can_jump(nums):
-    max_reachable = 0
-    n = len(nums)
-    
-    for i in range(n):
-        if i > max_reachable:
-            print("false")
-            return
-        max_reachable = max(max_reachable, i + nums[i])
-    
-    print("true")
-
-
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
         dp = [float('inf')] * (amount + 1)
