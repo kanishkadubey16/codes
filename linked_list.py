@@ -25,6 +25,23 @@ class Solution:
             prev = cur 
             cur = next_node 
         return prev
+
+
+class Solution:
+    def cloneLinkedList(self, head):
+        if not head:
+            return None
+        map = {}
+        cur = head 
+        while cur:
+            map[cur] = Node(cur.data)
+            cur = cur.next 
+        cur = head 
+        while cur:
+            map[cur].next = map.get(cur.next)
+            map[cur].random = map.get(cur.random)
+            cur = cur.next 
+        return map[head]
             
 
 
