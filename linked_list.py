@@ -15,6 +15,19 @@ def merge(L1, L2):
     temp.next = L2
     return L1
 
+
+class Solution:
+    #Function to check if the linked list has a loop.
+    def detectLoop(self, head):
+        slow = head 
+        fast = head 
+        while fast is not None and fast.next is not None:
+            slow = slow.next 
+            fast = fast.next.next 
+            if slow == fast:
+                return True 
+        return False
+
 class Solution:
     def reverseList(self, head):
         prev = None 
