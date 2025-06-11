@@ -82,35 +82,7 @@ def make_circular(head):
 
 
 
-'''
-class Node:
-    def __init__(self, val):
-        self.val = val
-        self.next = None
-        self.prev = None
-'''
-def insertnew(head, val , pos):
-    new_node = Node(val)
-    #edge case
-    if pos == 1:
-        new_node.next = head
-        head.prev = new_node
-        return new_node
-    #iterate cur to pos-2 steps
-    cnt = 1
-    cur = head
-    while cnt <= pos-2:
-            cur = cur.next
-            cnt += 1
-    #storing the address of the next node before breaking the link
-    next_node = cur.next
-    #link 4 and 70
-    cur.next = new_node
-    new_node.prev = cur
-    #link 70 and 5
-    new_node.next = next_node
-    next_node.prev = new_node
-    return head
+
 
 class Solution:
     def sortedMerge(self,head1, head2):
