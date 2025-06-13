@@ -96,35 +96,6 @@ class Solution:
                     i+=1
     
 
-
-# string questions 
-class Solution:
-    def minChar(self, s):
-        rev_s = s[::-1]
-        ans = s+"#"+rev_s
-        l = [0] * len(ans)
-        length = 0
-        i = 1
-        while i <len(ans):
-            if ans[i] == ans[length]:
-                length += 1
-                l[i] = length 
-                i += 1
-            else:
-                if length != 0:
-                    length = l[length -1 ]
-                else:
-                    l[i] = 0
-                    i+=1
-        return len(s) - l[-1]
-
-
-def areRotations(self,s1,s2):
-    if len(s1) != len(s2):
-        return False
-    return s2 in (s1 + s1)
-
-
 class Solution:
     def sort012(self, arr):
         # Count 0s, 1s, and 2s
