@@ -34,18 +34,6 @@ class Solution:
 
 
 
-
-
-
-class Solution:
-    
-    #Function is to check whether two strings are anagram of each other or not.
-    def areAnagrams(self, s1, s2):
-        if len(s1) != len(s2):
-            return False 
-        return sorted(s1) == sorted(s2)
-
-
 def common(chars1, chars2):
             for c1, c2 in zip(chars1, chars2):
                 if c1 and c2: return True
