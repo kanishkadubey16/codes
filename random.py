@@ -91,27 +91,6 @@ class Node:
         self.right = None
 '''
 
-def is_identical(root1, root2):
-    #base case 
-    if root1 == None and root2 == None:
-        return True 
-    
-    #false cases 
-    if root1 != None and root2 == None:
-        return False 
-
-    if root1 == None and root2 != None:
-        return False 
-
-    if root1.val != root2.val:
-        return False 
-
-    left = is_identical(root1.left,root2.left)
-    right = is_identical(root1.right,root2.right)
-
-    return left and right
-
-
 
 
 class Solution:
