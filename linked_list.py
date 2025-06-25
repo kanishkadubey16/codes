@@ -124,27 +124,6 @@ my_list.insert_at_end(20)
 my_list.insert_at_end(30)
 my_list.print_list()
 
-
-
-
-
-# Helper to create linked list from list
-def createLinkedList(arr):
-    head = Node(arr[0])
-    cur = head
-    for val in arr[1:]:
-        cur.next = Node(val)
-        cur = cur.next
-    return head
-
-# Helper to print linked list
-def printList(head):
-    temp = head
-    while temp:
-        print(temp.data, end=" ")
-        temp = temp.next
-    print()
-
 # Example Test
 arr = [1, 3, 2, 4, 5]
 head = createLinkedList(arr)
