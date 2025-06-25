@@ -137,27 +137,6 @@ printList(head)
 
 
 
-
-def insertion(head, K):
-    # Create a new node with the given value
-    new_node = Node(K)
-
-    # If the list is empty, point new_node to itself and return it as head
-    if not head:
-        new_node.next = new_node
-        return new_node
-
-    # Traverse the list to find the last node
-    current = head
-    while current.next != head:
-        current = current.next
-
-    # Insert the new node at the end
-    current.next = new_node
-    new_node.next = head
-
-    return head
-
 def removeNodes(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if not head:
             return None
