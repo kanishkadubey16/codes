@@ -202,14 +202,6 @@ class Solution:
         return res
 
 
-
-def odd_sum(arr):
-    odd = 0
-    for i in range(len(arr)):
-        if i % 2 == 1:
-            odd += arr[i]
-    return odd
-
 def maxSubArray(nums):
     # Initialize both res and current sum (ans) to the first element
     res = nums[0]
