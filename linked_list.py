@@ -200,4 +200,24 @@ def check(node,val):
     return check(root,root.val)
 
 
+class Solution:
+    def detectCycle(self, head):
+        slow = head
+        fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+            if slow == fast:  
+                break
+        else:
+            return None 
+        slow = head
+        while slow != fast:
+            slow = slow.next
+            fast = fast.next
+        
+        return slow
+
+
 # thinkl for the edge case
