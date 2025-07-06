@@ -68,20 +68,6 @@ class Solution:
                     lps[i] = 0
                     i+=1
     
-
-class Solution:
-    def sort012(self, arr):
-        # Count 0s, 1s, and 2s
-        c0 = arr.count(0)
-        c1 = arr.count(1)
-        c2 = arr.count(2)
-
-        # Overwrite the array directly using slicing
-        arr[:c0] = [0] * c0
-        arr[c0:c0 + c1] = [1] * c1
-        arr[c0 + c1:] = [2] * c2
-
-
 # trees question 
 '''
 class Node:
