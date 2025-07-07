@@ -1,24 +1,4 @@
 
-    #Function to remove a loop in the linked list.
-    def removeLoop(self, head):
-        slow = fast = head 
-        while fast and fast.next:
-            slow = slow.next 
-            fast = fast.next.next
-            if slow == fast:
-                break 
-        if slow != fast:
-            return True 
-        slow = head 
-        if slow == fast:
-            while fast.next != slow:
-                fast = fast.next 
-        else:
-            while slow.next != fast.next:
-                slow = slow.next 
-                fast = fast.next 
-        fast.next = None 
-        return True
 
 class Solution:
     #Function to check if the linked list has a loop.
