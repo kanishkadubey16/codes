@@ -49,25 +49,7 @@ def common(chars1, chars2):
 
 
 
-# search pattern 
-class Solution:
-    def constructLps(self, pat, lps):
-        l = 0
-        m = len(pat)
-        lps[0] = 0
-        i = 1
-        while i < m:
-            if pat[i] == pat[l]:
-                l+=1
-                lps[i] = l 
-                i+=1
-            else:
-                if l != 0:
-                    l = lps[l-1]
-                else:
-                    lps[i] = 0
-                    i+=1
-    
+
 # trees question 
 '''
 class Node:
