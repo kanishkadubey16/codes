@@ -1,9 +1,7 @@
 
 
 
-class LinkedList:
-    def __init__(self):
-        self.head = None
+
 
     def insert_at_end(self, value):
         new_node = Node(value)
