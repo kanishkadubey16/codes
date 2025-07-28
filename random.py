@@ -61,16 +61,6 @@ class Solution:
             result.append(newInterval)
         return result
 
-sorted_nums = sorted(nums)
-        res = 0
-        n = len(nums)
-
-        for idx in range(0, n, 2):
-            res += sorted_nums[idx]
-        
-        return res
-
-
 
 c = Counter(s)
         return len(set(c.values())) == 1
