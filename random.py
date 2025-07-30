@@ -62,7 +62,7 @@ class Solution:
         return result
 
 
-c = Counter(s)
+
         return len(set(c.values())) == 1
 
 
