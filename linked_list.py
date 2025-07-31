@@ -26,19 +26,6 @@ my_list.insert_at_end(20)
 my_list.insert_at_end(30)
 my_list.print_list()
 
-# Example Test
-arr = [1, 3, 2, 4, 5]
-head = createLinkedList(arr)
-
-M = 3
-K = 2
-
-head = addElement(head, M, K)
-print("After inserting at position", M, ":")
-printList(head)
-
-
-
 
 
 
