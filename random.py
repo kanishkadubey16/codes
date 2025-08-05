@@ -122,15 +122,6 @@ def swap_values(root, num1, num2):
 
 
 
-stack = []  
-        for char in s:
-            if stack and abs(ord(char) - ord(stack[-1])) == 32:
-                stack.pop()
-            else:
-                stack.append(char)
-
-        return ''.join(stack)
-
 
 
 class Solution:
