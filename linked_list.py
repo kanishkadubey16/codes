@@ -5,7 +5,7 @@
 
     def insert_at_end(self, value):
         new_node = Node(value)
-        if self.head is None:
+        
             self.head = new_node
         else:
             current = self.head
@@ -37,4 +37,5 @@ my_list.print_list()
 
 
 # thinkl for the edge case
+
 
