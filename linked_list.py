@@ -27,15 +27,11 @@ my_list.insert_at_end(30)
 my_list.print_list()
 
 
-my_list = LinkedList()
-my_list.insert_at_end(10)
-my_list.insert_at_end(20)
-my_list.insert_at_end(30)
-my_list.print_list()
 
 
 
 
 # thinkl for the edge case
+
 
 
